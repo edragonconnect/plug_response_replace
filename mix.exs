@@ -1,14 +1,20 @@
 defmodule PlugResponseReplace.MixProject do
   use Mix.Project
 
+  @description "A tiny plug for replacing response fields"
+  @source_url "https://github.com/edragonconnect/plug_response_replace"
+
   def project do
     [
       app: :plug_response_replace,
       version: "0.1.0",
-      elixir: "~> 1.10",
+      elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      docs: docs()
+      docs: docs(),
+      description: @description,
+      source_url: @source_url,
+      package: package()
     ]
   end
 
@@ -39,4 +45,11 @@ defmodule PlugResponseReplace.MixProject do
     ]
   end
 
+  defp package do
+    [
+      maintainers: ["Xin Zou"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => @source_url}
+    ]
+  end
 end

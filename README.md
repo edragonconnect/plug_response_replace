@@ -1,5 +1,7 @@
 # PlugResponseReplace
 
+[![Module Version](https://img.shields.io/hexpm/v/plug_response_replace.svg)](https://hex.pm/packages/plug_response_replace)
+
 A tiny plug for replacing [response fields](https://hexdocs.pm/plug/Plug.Conn.html#module-response-fields).
 
 ## Installation
@@ -82,3 +84,7 @@ defmodule MyHandler do
   # ... rest of the pipeline
 end
 ```
+
+## License
+
+MIT
