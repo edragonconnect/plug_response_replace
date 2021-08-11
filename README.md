@@ -11,7 +11,7 @@ Add a dependency to your application's mix.exs file:
 ```elixir
 def deps do
   [
-    {:plug_response_replace, "~> 0.1"}
+    {:plug_response_replace, "~> 0.2"}
   ]
 end
 ```
