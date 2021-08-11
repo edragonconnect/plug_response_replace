@@ -13,10 +13,10 @@ defmodule PlugResponseReplaceTest do
         })
 
       opts = [
-        resp_body: %{
+        resp_body: [
           pattern: "https://www.foobar.com",
           replacement: "https://www.barfoo.com"
-        }
+        ]
       ]
 
       conn =
@@ -30,10 +30,10 @@ defmodule PlugResponseReplaceTest do
       assert conn.status == 200
 
       opts = [
-        resp_body: %{
+        resp_body: [
           pattern: ~r("https://www.foobar.com"),
           replacement: "https://www.barfoo2.com"
-        }
+        ]
       ]
 
       conn =
@@ -49,10 +49,10 @@ defmodule PlugResponseReplaceTest do
 
     test "binary response body" do
       opts = [
-        resp_body: %{
+        resp_body: [
           pattern: "hello",
           replacement: "hi"
-        }
+        ]
       ]
 
       conn =
@@ -66,11 +66,11 @@ defmodule PlugResponseReplaceTest do
 
     test "replace resp_body with global as false" do
       opts = [
-        resp_body: %{
+        resp_body: [
           pattern: "hello",
           replacement: "hi",
           options: [global: false]
-        }
+        ]
       ]
 
       conn =
@@ -151,10 +151,10 @@ defmodule PlugResponseReplaceTest do
       })
 
     opts = [
-      resp_body: %{
+      resp_body: [
         pattern: "https://www2.foo.com",
         replacement: "https://www.bar.com"
-      },
+      ],
       status: 201,
       resp_headers: [
         {"content-type", "application/json; charset=utf-8"}

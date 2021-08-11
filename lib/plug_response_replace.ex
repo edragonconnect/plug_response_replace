@@ -11,8 +11,11 @@ defmodule PlugResponseReplace do
     Plug.Conn.register_before_send(conn, fn conn ->
       opts
       |> Keyword.take(@response_fields)
-      |> Enum.reduce(conn, fn {response_field, settings}, conn ->
-        replace(response_field, settings, conn)
+      |> Enum.reduce(conn, fn
+        {:resp_body, settings}, conn ->
+          replace(:resp_body, Map.new(settings), conn)
+        {response_field, settings}, conn ->
+          replace(response_field, settings, conn)
       end)
     end)
   end

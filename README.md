@@ -29,11 +29,11 @@ defmodule MyHandler do
   use Plug.Builder
 
   plug PlugResponseReplace, 
-    resp_body: %{
+    resp_body: [
       pattern: "...",
       replacement: "...",
       options: [] # optional
-    }
+    ]
 
   # ... rest of the pipeline
 end
